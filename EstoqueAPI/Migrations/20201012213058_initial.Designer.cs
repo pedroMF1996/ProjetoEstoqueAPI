@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EstoqueAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201012001411_initial")]
+    [Migration("20201012213058_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

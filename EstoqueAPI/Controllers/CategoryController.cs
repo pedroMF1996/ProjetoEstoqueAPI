@@ -32,10 +32,10 @@ namespace EstoqueAPI.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public async Task<ActionResult<Product>> GetById(int id)
+        public async Task<ActionResult<Category>> GetById(int id)
         {
-            var product = await service.FindByIdAsync(new Product(), id);
-            return product;
+            var category = await service.FindByIdAsync(new Category(), id);
+            return category;
         }
 
         [HttpPost]
@@ -68,19 +68,21 @@ namespace EstoqueAPI.Controllers
             try
             {
 
-                var aluno = await service.FindByIdAsync(new Category(), categoryId);
+                var category = await service.FindByIdAsync(new Category(), categoryId);
 
-                if (aluno == null)
+                if (category == null)
                 {
                     return NotFound();
                 }
+
+                model.Id = categoryId;
 
                 service.Update(model);
 
                 if (await service.SaveChangesAsync())
                 {
-                    aluno = await service.FindByIdAsync(new Category(), categoryId);
-                    return Created($"/api/aluno/{model.Id}", aluno);
+                    category = await service.FindByIdAsync(new Category(), categoryId);
+                    return Created($"/api/aluno/{model.Id}", category);
                 }
 
                 return BadRequest();
@@ -96,11 +98,11 @@ namespace EstoqueAPI.Controllers
         {
             try
             {
-                var aluno = await service.FindByIdAsync(new Category(), categoryId);
+                var category = await service.FindByIdAsync(new Category(), categoryId);
 
-                if (aluno == null) return NotFound();
+                if (category == null) return NotFound();
 
-                service.Delete(aluno);
+                service.Delete(category);
 
                 if (await service.SaveChangesAsync())
                 {

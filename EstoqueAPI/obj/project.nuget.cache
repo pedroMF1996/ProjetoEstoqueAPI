@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RLihRbwIcSZLOS+uXoilN1KzZyWAIvUyHOwFbFh+xV3sVFdxROlfhiJn19yQf4Br2dIxwLdzhXesxirpgNfosQ==",
+  "dgSpecHash": "XMLHMJ8FZ4HetAGDhBlgJeSz8HM02lAZJSUJp9jlyjaQ0vzZW363cKjX2SOY+tRXzLgLu24DQwISquu+KqbVNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pedro Falleiros\\source\\repos\\EstoqueAPI\\EstoqueAPI\\EstoqueAPI.csproj",
+  "projectFilePath": "C:\\Users\\Pedro Falleiros\\source\\repos\\EstoqueAPI\\ProjetoEstoqueAPI\\EstoqueAPI\\EstoqueAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pedro Falleiros\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Pedro Falleiros\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

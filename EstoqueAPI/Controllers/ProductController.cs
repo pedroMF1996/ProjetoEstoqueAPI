@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using EstoqueAPI.Models;
 using EstoqueAPI.Services;
@@ -79,6 +80,8 @@ namespace EstoqueAPI.Controllers
                     return NotFound();
                 }
 
+                model.Id = id;
+
                 service.Update(model);
 
                 if (await service.SaveChangesAsync())
@@ -95,6 +98,28 @@ namespace EstoqueAPI.Controllers
             }
         }
 
+        [HttpDelete("{productId:int}")]
+        public async Task<IActionResult> Delete(int productId)
+        {
+            try
+            {
+                var product = await service.FindByIdAsync(new Product(), productId);
 
+                if (product == null) return NotFound();
+
+                service.Delete(product);
+
+                if (await service.SaveChangesAsync())
+                {
+                    return Ok();
+                }
+
+                return BadRequest();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Banco de dados falhou");
+            }
+        }
     }
 }
